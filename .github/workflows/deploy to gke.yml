@@ -62,7 +62,7 @@ jobs:
     - name: Deploy
       run: |-
         # replacing the image name in the k8s template
-        kubectl set image LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA
+        kubectl set image LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA -f deployment.yaml
         kubectl apply -f deployment.yaml
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide5
