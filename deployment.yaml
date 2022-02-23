@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: spring-petclinic
-          image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
+          image: image-name
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
