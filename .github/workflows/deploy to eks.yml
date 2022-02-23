@@ -8,6 +8,7 @@ env:
   ECR_REPOSITORY: spring-petclinic
   CLUSTER_NAME: actions-demo
   REGION: us-west-2
+  DEPLOYMENT_NAME: spring-petclinic
 
 
 jobs:
