@@ -26,7 +26,19 @@ jobs:
       - run:
           name: Test
           command: mvn test
-
+  #Adding Environment Variables  
+  echo-env-var:
+    docker:
+      - image: cimg/base:2022.03
+    environment:
+      NAME: Toluwalope
+    steps:
+      - run: 
+          name: Print an environment varible that shows my name
+          command: echo $NAME
+     
+      
+      
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -34,3 +46,4 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test
+      - echo-env-var
